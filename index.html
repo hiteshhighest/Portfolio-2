@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#18181b">
+    <meta name="author" content="PixelForge">
+    <meta name="description" content="Web Development portfolio showcasing my projects, skills, experience, and contact.">
+    <meta name="keywords" content="web developer, portfolio, frontend, landing page, React, JavaScript">
+    <meta name="robots" content="index, follow">
+
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: var(--Main);
+        }
+
+        .dot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--Text);
+            opacity: 0.7;
+            z-index: -10; 
+            animation: moveDot 30s linear infinite;
+        }
+
+        @keyframes moveDot {
+            0% {
+                transform: translate(0, 0);
+            }
+            20% {
+                transform: translate(10vw, -10vh);
+            }
+            40% {
+                transform: translate(-15vw, 10vh);
+            }
+            60% {
+                transform: translate(20vw, -20vh);
+            }
+            80% {
+                transform: translate(-30vw, 15vh);
+            }
+            100% {
+                transform: translate(25vw, -25vh);
+            }
+        }
+
+        .dot:nth-child(1) {
+            animation-duration: 35s;
+        }
+
+        .dot:nth-child(2) {
+            animation-duration: 32s;
+        }
+
+        .dot:nth-child(3) {
+            animation-duration: 38s;
+        }
+
+        .dot:nth-child(4) {
+            animation-duration: 33s;
+        }
+
+        .dot:nth-child(5) {
+            animation-duration: 30s;
+        }
+
+        .dot:nth-child(6) {
+            animation-duration: 36s;
+        }
+
+        .dot {
+            animation-delay: calc(1s * var(--i));
+        }
+
+        @media (max-width: 768px) {
+            .dot {
+                display: none;
+            }
+        }
+    </style>
+
+    <link rel="icon" href="Images/Logo.png" type="image/png">
+    <link rel="shortcut icon" href="Images/Favicon.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body class="Dark">
+    <div class="dot" style="top: 10%; left: 30%;"></div>
+    <div class="dot" style="top: 40%; left: 50%;"></div>
+    <div class="dot" style="top: 70%; left: 20%;"></div>
+    <div class="dot" style="top: 80%; left: 70%;"></div>
+    <div class="dot" style="top: 30%; left: 90%;"></div>
+    <div class="dot" style="top: 50%; left: 10%;"></div>
+
+    <div class="loading-page">
+        <img src="Images/Favicon.png" style="border-radius: 50%; height: 35vh;">
+        <p>Loading...</p>
+        <img src="Images/Light.svg" class="Theme" onclick="Theme()">
+    </div>
+
+    <nav>
+        <div>
+            <img src="Images/Logo.jpg" style="border-radius: 50%;">
+            <p>PixelForge</p>
+        </div>
+        <div class="link">
+            <a>About</a>
+            <a>Project</a>
+            <a>Contact</a>
+        </div>
+        <!-- Hamburger menu button for mobile -->
+        <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+    </nav>
+
+    <!-- Sidebar for mobile (on the right side) -->
+    <div class="sidebar">
+        <a href="#">About</a>
+        <a href="#">Project</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

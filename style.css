@@ -1,0 +1,179 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Roboto Slab", serif;
+}
+
+.Light {
+    --Text: #000;
+    --Background: #0051ff;
+    --Main: #e0e0e5;
+    --AHover: #66aaff;
+}
+
+.Dark {
+    --Text: #fff;
+    --Background: #001b57;
+    --Main: #18181b;
+    --AHover: #0051ff;
+}
+
+.Theme {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    cursor: pointer;
+    width: 7vh;
+}
+
+.loading-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* To change */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background: var(--Background);
+    color: var(--Text);
+    z-index: 100;
+}
+
+.loading-page p {
+    font-family: "Winky Sans", sans-serif;
+    font-size: xx-large;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    padding-left: 1vw;
+    padding-right: 2vw;
+    background-color: var(--Background);
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav div img {
+    height: 12vh;
+    margin-right: 1vw;
+    cursor: pointer;
+}
+
+nav div img:hover {  
+    animation: rotate 1.3s ease-in-out;
+}
+
+@keyframes rotate {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+
+nav div p {
+    color: var(--Text);
+    font-size: xx-large;
+}
+
+nav div a {
+    color: var(--Text);
+}
+
+nav .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2vw;
+    gap: 2vw; /* Add space between the links */
+}
+
+nav div a {
+    color: var(--Text);
+    font-size: large;
+    text-decoration: none;
+    padding: 0.5vw;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+nav div a:hover {
+    color: var(--AHover);
+}
+
+/* Default Sidebar style */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Initially off-screen on the right */
+    width: 250px;
+    height: 100%;
+    background-color: var(--Background);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Sidebar links styling */
+.sidebar a {
+    color: var(--Text);
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: var(--AHover);
+}
+
+/* Show sidebar on mobile */
+@media (max-width: 768px) {
+    .sidebar.active {
+        right: 0; /* Move sidebar into view when active */
+    }
+
+    .sidebar a {
+        font-size: 1.5rem;
+    }
+
+    /* Hamburger menu button in the navbar */
+    .menu-btn {
+        position: absolute;
+        top: 50%; /* Center vertically in navbar */
+        right: 10px; /* Distance from the right edge */
+        transform: translateY(-50%); /* Adjust to center vertically */
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--Text);
+        z-index: 1001; /* Ensure it's on top */
+    }
+
+    /* Hide the links on mobile */
+    .link {
+        display: none !important; /* Use !important to ensure it's hidden */
+    }
+}
+
+/* Hide menu button on desktop */
+@media (min-width: 769px) {
+    .menu-btn {
+        display: none;
+    }
+}
