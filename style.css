@@ -157,7 +157,7 @@ nav div a:hover {
     .menu-btn {
         position: absolute;
         top: 50%; /* Center vertically in navbar */
-        right: 10px; /* Distance from the right edge */
+        right: 7vw; /* Distance from the right edge */
         transform: translateY(-50%); /* Adjust to center vertically */
         font-size: 2rem;
         cursor: pointer;
